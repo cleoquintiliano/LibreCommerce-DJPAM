@@ -42,12 +42,14 @@ public class ContaReceberView extends javax.swing.JFrame {
         tblContaReceber = new javax.swing.JTable();
         btnReceberTodas = new javax.swing.JButton();
         btnReceber = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
 
         jLabel1.setText("Cliente:");
 
+        btnPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/pesquisar.png"))); // NOI18N
         btnPesquisar.setText("Pesquisar");
         btnPesquisar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -63,6 +65,7 @@ public class ContaReceberView extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tblContaReceber);
 
+        btnReceberTodas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Euro.png"))); // NOI18N
         btnReceberTodas.setText("ReceberTodas");
         btnReceberTodas.setEnabled(false);
         btnReceberTodas.addActionListener(new java.awt.event.ActionListener() {
@@ -71,11 +74,20 @@ public class ContaReceberView extends javax.swing.JFrame {
             }
         });
 
+        btnReceber.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/dollar.png"))); // NOI18N
         btnReceber.setText("Receber");
         btnReceber.setEnabled(false);
         btnReceber.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnReceberActionPerformed(evt);
+            }
+        });
+
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cancelar.png"))); // NOI18N
+        jButton1.setText("Cancelar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
             }
         });
 
@@ -97,7 +109,9 @@ public class ContaReceberView extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(btnReceber)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnReceberTodas)))
+                        .addComponent(btnReceberTodas)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton1)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -113,7 +127,8 @@ public class ContaReceberView extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnReceberTodas)
-                    .addComponent(btnReceber))
+                    .addComponent(btnReceber)
+                    .addComponent(jButton1))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -163,10 +178,15 @@ public class ContaReceberView extends javax.swing.JFrame {
         btnReceberTodas.setEnabled(true);
     }//GEN-LAST:event_tblContaReceberMouseClicked
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnPesquisar;
     private javax.swing.JButton btnReceber;
     private javax.swing.JButton btnReceberTodas;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tblContaReceber;

@@ -5,9 +5,16 @@
  */
 package br.com.librecommerce.view;
 
+import br.com.librecommerce.controller.CidadeController;
+import br.com.librecommerce.controller.EstadoController;
 import br.com.librecommerce.controller.FornecedorController;
 import br.com.librecommerce.modelo.Cidade;
+import br.com.librecommerce.modelo.Estado;
 import br.com.librecommerce.modelo.Fornecedor;
+import br.com.librecommerce.modelo.comboBoxModel.CidadeCellRenderer;
+import br.com.librecommerce.modelo.comboBoxModel.CidadeComboModel;
+import br.com.librecommerce.modelo.comboBoxModel.EstadoCellRenderer;
+import br.com.librecommerce.modelo.comboBoxModel.EstadoComboModel;
 import br.com.librecommerce.util.Messages;
 
 /**
@@ -15,12 +22,19 @@ import br.com.librecommerce.util.Messages;
  * @author Clovis
  */
 public class FornecedorView extends javax.swing.JFrame {
+    
+    private EstadoComboModel estadoComboModel = new EstadoComboModel();
+    private EstadoCellRenderer estadoCellRenderer = new EstadoCellRenderer();
+    
+    private CidadeComboModel cidadeComboModel = new CidadeComboModel();
+    private CidadeCellRenderer cidadeCellRenderer = new CidadeCellRenderer();
 
     /**
      * Creates new form FornecedorView
      */
     public FornecedorView() {
         initComponents();
+        carregaComboEstados();
     }
 
     /**
@@ -53,7 +67,8 @@ public class FornecedorView extends javax.swing.JFrame {
         txtCNPJ = new javax.swing.JFormattedTextField();
         txtInscEstadual = new javax.swing.JFormattedTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("LibreCommerce - Cadastro de Fornecedores");
         setResizable(false);
 
         jLabel1.setText("ID:");
@@ -66,16 +81,28 @@ public class FornecedorView extends javax.swing.JFrame {
 
         jLabel4.setText("Estado:");
 
-        cbEstados.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbEstados.setRenderer(estadoCellRenderer);
+        cbEstados.setModel(estadoComboModel);
+        cbEstados.addPopupMenuListener(new javax.swing.event.PopupMenuListener() {
+            public void popupMenuCanceled(javax.swing.event.PopupMenuEvent evt) {
+            }
+            public void popupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {
+                cbEstadosPopupMenuWillBecomeInvisible(evt);
+            }
+            public void popupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt) {
+            }
+        });
 
         jLabel5.setText("Cidade:");
 
-        cbCidades.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbCidades.setRenderer(cidadeCellRenderer);
+        cbCidades.setModel(cidadeComboModel);
 
         jLabel6.setText("CNPJ:");
 
         jLabel7.setText("Insc. Estadual:");
 
+        btnCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cancelar.png"))); // NOI18N
         btnCancelar.setText("Cancelar");
         btnCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -83,6 +110,7 @@ public class FornecedorView extends javax.swing.JFrame {
             }
         });
 
+        btnAtualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/atualizar.png"))); // NOI18N
         btnAtualizar.setText("Atualizar");
         btnAtualizar.setEnabled(false);
         btnAtualizar.addActionListener(new java.awt.event.ActionListener() {
@@ -91,6 +119,7 @@ public class FornecedorView extends javax.swing.JFrame {
             }
         });
 
+        btnSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/OK.png"))); // NOI18N
         btnSalvar.setText("Salvar");
         btnSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -98,6 +127,7 @@ public class FornecedorView extends javax.swing.JFrame {
             }
         });
 
+        btnPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/atualizar.png"))); // NOI18N
         btnPesquisar.setText("Pesquisar");
         btnPesquisar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -105,6 +135,7 @@ public class FornecedorView extends javax.swing.JFrame {
             }
         });
 
+        btnNovaCidade.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/adicionar.png"))); // NOI18N
         btnNovaCidade.setText("Nova Cidade");
         btnNovaCidade.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -112,6 +143,7 @@ public class FornecedorView extends javax.swing.JFrame {
             }
         });
 
+        btnNovo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/novo.png"))); // NOI18N
         btnNovo.setText("Novo");
         btnNovo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -170,7 +202,7 @@ public class FornecedorView extends javax.swing.JFrame {
                                     .addComponent(cbCidades, 0, 230, Short.MAX_VALUE)
                                     .addComponent(txtInscEstadual)))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 136, Short.MAX_VALUE)
+                        .addGap(0, 26, Short.MAX_VALUE)
                         .addComponent(btnNovo)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnNovaCidade)
@@ -222,6 +254,11 @@ public class FornecedorView extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void carregaComboEstados() {
+        this.estadoComboModel.addAll(new EstadoController().buscarTodos());
+    }
+
 
     private void btnNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoActionPerformed
         clearFields();
@@ -292,6 +329,11 @@ public class FornecedorView extends javax.swing.JFrame {
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         this.dispose();
     }//GEN-LAST:event_btnCancelarActionPerformed
+
+    private void cbEstadosPopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_cbEstadosPopupMenuWillBecomeInvisible
+        Estado estado = (Estado) cbEstados.getSelectedItem();
+        this.cidadeComboModel.addAll(new CidadeController().buscarTodasDoEstado(estado));
+    }//GEN-LAST:event_cbEstadosPopupMenuWillBecomeInvisible
 
     public void habilitaAtualizar() {
         this.btnAtualizar.setEnabled(true);

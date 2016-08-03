@@ -60,7 +60,7 @@ public class ContaPagarView extends javax.swing.JFrame {
 
         jLabel4.setText("jLabel4");
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
 
         jLabel1.setText("Descrição:");
@@ -75,6 +75,7 @@ public class ContaPagarView extends javax.swing.JFrame {
 
         jLabel3.setText("Valor:");
 
+        btnPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/pesquisar.png"))); // NOI18N
         btnPesquisar.setText("Pesquisar");
         btnPesquisar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -82,6 +83,7 @@ public class ContaPagarView extends javax.swing.JFrame {
             }
         });
 
+        btnSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/OK.png"))); // NOI18N
         btnSalvar.setText("Salvar");
         btnSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -97,6 +99,7 @@ public class ContaPagarView extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tblContaPagar);
 
+        btnPagar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/dollar.png"))); // NOI18N
         btnPagar.setText("Pagar");
         btnPagar.setEnabled(false);
         btnPagar.addActionListener(new java.awt.event.ActionListener() {
@@ -105,6 +108,7 @@ public class ContaPagarView extends javax.swing.JFrame {
             }
         });
 
+        btnCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cancelar.png"))); // NOI18N
         btnCancelar.setText("Cancelar");
         btnCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -112,6 +116,7 @@ public class ContaPagarView extends javax.swing.JFrame {
             }
         });
 
+        btnPagarTodas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Euro.png"))); // NOI18N
         btnPagarTodas.setText("Pagar Todas");
         btnPagarTodas.setEnabled(false);
         btnPagarTodas.addActionListener(new java.awt.event.ActionListener() {
@@ -174,7 +179,7 @@ public class ContaPagarView extends javax.swing.JFrame {
                     .addComponent(btnSalvar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnPagar)
                     .addComponent(btnCancelar)

@@ -202,7 +202,7 @@ public class PrincipalView extends javax.swing.JFrame {
         jMenu1.add(menuProdutos);
         jMenu1.add(jSeparator2);
 
-        menuSair.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F6, 0));
+        menuSair.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1, 0));
         menuSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/sair.png"))); // NOI18N
         menuSair.setText("Sair");
         menuSair.addActionListener(new java.awt.event.ActionListener() {
@@ -217,7 +217,7 @@ public class PrincipalView extends javax.swing.JFrame {
         jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/financeiro.png"))); // NOI18N
         jMenu2.setText("Financeiro");
 
-        menuContasReceber.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F7, 0));
+        menuContasReceber.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F6, 0));
         menuContasReceber.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/contas-receber.png"))); // NOI18N
         menuContasReceber.setText("Contas a Receber");
         menuContasReceber.addActionListener(new java.awt.event.ActionListener() {
@@ -227,7 +227,7 @@ public class PrincipalView extends javax.swing.JFrame {
         });
         jMenu2.add(menuContasReceber);
 
-        menuContasPagar.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F8, 0));
+        menuContasPagar.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F7, 0));
         menuContasPagar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/contas-pagar.png"))); // NOI18N
         menuContasPagar.setText("Contas a Pagar");
         menuContasPagar.addActionListener(new java.awt.event.ActionListener() {
@@ -314,7 +314,7 @@ public class PrincipalView extends javax.swing.JFrame {
             String valorInformado = JOptionPane.showInputDialog(this, "Informe o valor de abertura!",
                     "Informação", JOptionPane.INFORMATION_MESSAGE);
 
-            if (valorInformado != null || !valorInformado.trim().equals("")) {
+            if (valorInformado != null && !valorInformado.trim().equals("")) {
                 Double valorAbertura = Double.parseDouble(valorInformado.replace(",", "."));
 
                 caixa = new Caixa();
@@ -340,7 +340,7 @@ public class PrincipalView extends javax.swing.JFrame {
             String valorInformado = JOptionPane.showInputDialog(this, "Informe o valor de fechamento!",
                     "Informação", JOptionPane.INFORMATION_MESSAGE);
 
-            if (valorInformado != null || !valorInformado.trim().equals("")) {
+            if (valorInformado != null && !valorInformado.trim().equals("")) {
                 Double valorFechamento = Double.parseDouble(valorInformado.replace(",", "."));
 
                 caixa.setStatusCaixa(StatusCaixa.FECHADO);
@@ -364,7 +364,7 @@ public class PrincipalView extends javax.swing.JFrame {
             String valorInformado = JOptionPane.showInputDialog(this, "Informe o valor da retirada",
                     "Informação", JOptionPane.INFORMATION_MESSAGE);
 
-            if (valorInformado != null || !valorInformado.trim().equals("")) {
+            if (valorInformado != null && !valorInformado.trim().equals("")) {
 
                 Double valorSangria = Double.parseDouble(valorInformado.replace(",", "."));
 

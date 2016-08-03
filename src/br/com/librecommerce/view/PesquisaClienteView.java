@@ -51,6 +51,7 @@ public class PesquisaClienteView extends javax.swing.JDialog {
 
         jLabel1.setText("Nome do Cliente:");
 
+        btnPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/pesquisar.png"))); // NOI18N
         btnPesquisar.setText("Pesquisar");
         btnPesquisar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -66,6 +67,7 @@ public class PesquisaClienteView extends javax.swing.JDialog {
         });
         jScrollPane1.setViewportView(tblClientes);
 
+        btnSelecionarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/selecionar.png"))); // NOI18N
         btnSelecionarCliente.setText("Selecionar Cliente");
         btnSelecionarCliente.setEnabled(false);
         btnSelecionarCliente.addActionListener(new java.awt.event.ActionListener() {

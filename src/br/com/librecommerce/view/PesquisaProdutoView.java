@@ -51,6 +51,7 @@ public class PesquisaProdutoView extends javax.swing.JDialog {
 
         jLabel1.setText("Nome do Produto:");
 
+        btnSelecionar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/selecionar.png"))); // NOI18N
         btnSelecionar.setText("Selecionar");
         btnSelecionar.setEnabled(false);
         btnSelecionar.addActionListener(new java.awt.event.ActionListener() {
@@ -59,6 +60,7 @@ public class PesquisaProdutoView extends javax.swing.JDialog {
             }
         });
 
+        btnPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/pesquisar.png"))); // NOI18N
         btnPesquisar.setText("Pesquisar");
         btnPesquisar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -102,7 +104,7 @@ public class PesquisaProdutoView extends javax.swing.JDialog {
                     .addComponent(btnSelecionar)
                     .addComponent(btnPesquisar))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 285, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 281, Short.MAX_VALUE)
                 .addContainerGap())
         );
 

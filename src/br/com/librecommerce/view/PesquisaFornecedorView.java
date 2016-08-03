@@ -50,6 +50,7 @@ public class PesquisaFornecedorView extends javax.swing.JDialog {
 
         jLabel1.setText("Nome do Fornecedor:");
 
+        btnSelecionar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/selecionar.png"))); // NOI18N
         btnSelecionar.setText("Selecionar");
         btnSelecionar.setEnabled(false);
         btnSelecionar.addActionListener(new java.awt.event.ActionListener() {
@@ -58,6 +59,7 @@ public class PesquisaFornecedorView extends javax.swing.JDialog {
             }
         });
 
+        btnPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/pesquisar.png"))); // NOI18N
         btnPesquisar.setText("Pesquisar");
         btnPesquisar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

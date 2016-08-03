@@ -79,6 +79,7 @@ public class NovaVendaView extends javax.swing.JFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         btnCancelarVenda.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnCancelarVenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cancelar.png"))); // NOI18N
         btnCancelarVenda.setText("Cancelar Venda");
         btnCancelarVenda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -87,6 +88,7 @@ public class NovaVendaView extends javax.swing.JFrame {
         });
 
         btnSalvarVenda.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnSalvarVenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/OK.png"))); // NOI18N
         btnSalvarVenda.setText("Salvar Venda");
         btnSalvarVenda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -144,6 +146,7 @@ public class NovaVendaView extends javax.swing.JFrame {
             }
         });
 
+        btnAdicionar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/novo.png"))); // NOI18N
         btnAdicionar.setText("Adicionar");
         btnAdicionar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -151,6 +154,7 @@ public class NovaVendaView extends javax.swing.JFrame {
             }
         });
 
+        btnRemoverItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/remover.png"))); // NOI18N
         btnRemoverItem.setText("Remover Item");
         btnRemoverItem.setEnabled(false);
         btnRemoverItem.addActionListener(new java.awt.event.ActionListener() {
@@ -196,7 +200,7 @@ public class NovaVendaView extends javax.swing.JFrame {
                     .addComponent(txtQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnRemoverItem))
                 .addGap(14, 14, 14)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 334, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 325, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );

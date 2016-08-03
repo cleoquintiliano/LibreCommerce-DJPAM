@@ -17,7 +17,7 @@ import javax.swing.ComboBoxModel;
  */
 public class CidadeComboModel extends AbstractListModel<Object>
         implements ComboBoxModel<Object> {
-    
+
     private List<Cidade> cidades = new ArrayList<>();
     private Cidade cidadeSelecionada;
 
@@ -40,12 +40,15 @@ public class CidadeComboModel extends AbstractListModel<Object>
     public Object getSelectedItem() {
         return cidadeSelecionada;
     }
-    
-    public void addAll(List<Cidade> cidades)  {
+
+    public void addAll(List<Cidade> cidades) {
         this.cidades.clear();
-        this.cidades.addAll(cidades);
-        fireIntervalAdded(this, getSize(), getSize());
-        setSelectedItem(this.cidades.get(getSize()-1));
+        this.setSelectedItem(null);
+        if (cidades != null && cidades.size() > 0) {
+            this.cidades.addAll(cidades);
+            fireIntervalAdded(this, getSize(), getSize());
+            setSelectedItem(this.cidades.get(getSize() - 1));
+        }
     }
 
 }
