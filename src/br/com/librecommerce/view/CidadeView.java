@@ -135,8 +135,8 @@ public class CidadeView extends javax.swing.JDialog {
     }
     
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
-        if (txtNomeCidade.getText().trim().equals("")) {
-            Messages.alertMessage(this, "Informe o nome da Cidade!");
+        if (txtNomeCidade.getText().trim().equals("") && cbEstados.getSelectedItem() == null) {
+            Messages.alertMessage(this, "Informe o Estado e o nome da Cidade!");
         } else {
              Cidade cidade = new Cidade();
              cidade.setNome(txtNomeCidade.getText());

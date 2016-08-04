@@ -228,10 +228,10 @@ public class ProdutoView extends javax.swing.JFrame {
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
         if (txtCodBarra.getText().trim().equals("")
-                || txtNomeProduto.getText().trim().equals("")
-                || txtValorUnitario.getText().trim().equals("")
-                || txtEstoque.getText().trim().equals("")
-                || cbCategoria.getSelectedItem() == null) {
+                && txtNomeProduto.getText().trim().equals("")
+                && txtValorUnitario.getText().trim().equals("")
+                && txtEstoque.getText().trim().equals("")
+                && cbCategoria.getSelectedItem() == null) {
             Messages.alertMessage(this, "Todos os campos são obrigatórios!");
         } else {
             Produto produto = new Produto();
@@ -251,10 +251,10 @@ public class ProdutoView extends javax.swing.JFrame {
 
     private void btnAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtualizarActionPerformed
         if (txtCodBarra.getText().trim().equals("")
-                || txtNomeProduto.getText().trim().equals("")
-                || txtValorUnitario.getText().trim().equals("")
-                || txtEstoque.getText().trim().equals("")
-                || cbCategoria.getSelectedItem() == null) {
+                && txtNomeProduto.getText().trim().equals("")
+                && txtValorUnitario.getText().trim().equals("")
+                && txtEstoque.getText().trim().equals("")
+                && cbCategoria.getSelectedItem() == null) {
             Messages.alertMessage(this, "Todos os campos são obrigatórios!");
         } else {
             Produto produto = new Produto();

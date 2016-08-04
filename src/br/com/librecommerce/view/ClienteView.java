@@ -283,7 +283,7 @@ public class ClienteView extends javax.swing.JFrame {
     }//GEN-LAST:event_btnPesquisarActionPerformed
     
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
-        if (txtNome.getText().trim().equals("") || cbCidades.getSelectedItem() == null) {
+        if (txtNome.getText().trim().equals("") && cbCidades.getSelectedItem() == null) {
             Messages.alertMessage(this, "Informe o Nome e a Cidade!");
         } else {
             Cliente cliente = new Cliente();
@@ -306,7 +306,7 @@ public class ClienteView extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void btnAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtualizarActionPerformed
-        if (txtNome.getText().trim().equals("") || cbCidades.getSelectedItem() == null) {
+        if (txtNome.getText().trim().equals("") && cbCidades.getSelectedItem() == null) {
             Messages.alertMessage(this, "Informe o Nome e a Cidade!");
         } else {
             Cliente cliente = new Cliente();

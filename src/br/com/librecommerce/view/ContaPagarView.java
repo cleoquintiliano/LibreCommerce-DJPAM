@@ -214,8 +214,8 @@ public class ContaPagarView extends javax.swing.JFrame {
     }//GEN-LAST:event_btnPesquisarActionPerformed
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
-        if (txtDescricao.getText().trim().equals("") ||
-                txtDataVencimento.getText().trim().equals("") ||
+        if (txtDescricao.getText().trim().equals("") &&
+                txtDataVencimento.getText().trim().equals("") &&
                 txtValor.getText().trim().equals("")) {
             Messages.alertMessage(this, "Todos os campos são obrigatórios!");
         } else {

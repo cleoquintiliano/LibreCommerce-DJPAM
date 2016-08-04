@@ -287,7 +287,7 @@ public class FornecedorView extends javax.swing.JFrame {
     }//GEN-LAST:event_btnPesquisarActionPerformed
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
-        if (txtNomeFornecedor.getText().trim().equals("") || cbCidades.getSelectedItem() == null) {
+        if (txtNomeFornecedor.getText().trim().equals("") && cbCidades.getSelectedItem() == null) {
             Messages.alertMessage(this, "Informe o Nome e a Cidade!");
         } else {
             Fornecedor fornecedor = new Fornecedor();
@@ -306,7 +306,7 @@ public class FornecedorView extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void btnAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtualizarActionPerformed
-        if (txtNomeFornecedor.getText().trim().equals("") || cbCidades.getSelectedItem() == null) {
+        if (txtNomeFornecedor.getText().trim().equals("") && cbCidades.getSelectedItem() == null) {
             Messages.alertMessage(this, "Informe o Nome e a Cidade!");
         } else {
             Fornecedor fornecedor = new Fornecedor();
